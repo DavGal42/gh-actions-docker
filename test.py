@@ -4,7 +4,7 @@ from main import add, subtract, multiply, divide, floor_divide, modulus
 
 class TestMathOperations(unittest.TestCase):
     def test_add(self):
-        self.assertEqual(add(3, 5), 10)
+        self.assertEqual(add(3, 5), 8)
         self.assertEqual(add(-1, 1), 0)
         self.assertEqual(add(0, 0), 0)
 
