@@ -30,7 +30,9 @@ jobs:
   build:
       runs-on: ubuntu-latest  
 
-      if: contains(github.event.head_commit.message, 'release candidate')
+      if: >
+        github.event_name == 'workflow_dispatch' && contains(github.event.head_commit.message, 'release candidate') ||
+        github.event_name == 'pull_request' && contains(github.event.pull_request.title, 'release candidate')
 
       steps:
       - name: Checkout code
